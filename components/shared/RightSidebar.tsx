@@ -7,18 +7,18 @@ import RenderTag from './RenderTag';
 
 const RightSidebar = () => {
   const hotQuestions = [
-   { _id: 1, title: 'How i dassda GADSFAS CSFfbfb dfvs'},
-   { _id: 2, title: 'How i dassda GADSFAS CSFfbfb dfvs'},
-   { _id: 3, title: 'How i dassda GADSFAS CSFfbfb dfvs'},
-   { _id: 4, title: 'How i dassda GADSFAS CSFfbfb dfvs'},
-   { _id: 5, title: 'How i dassda GADSFAS CSFfbfb dfvs'},
+   { _id: "1", title: 'How i dassda GADSFAS CSFfbfb dfvs'},
+   { _id: "2", title: 'How i dassda GADSFAS CSFfbfb dfvs'},
+   { _id: "3", title: 'How i dassda GADSFAS CSFfbfb dfvs'},
+   { _id: "4", title: 'How i dassda GADSFAS CSFfbfb dfvs'},
+   { _id: "5", title: 'How i dassda GADSFAS CSFfbfb dfvs'},
   ]
   const popularTags = [
-    { _id: 1, name: "javascript", totalQuestions: 5 },
-    { _id: 2, name: "react", totalQuestions: 8 },
-    { _id: 3, name: "next", totalQuestions: 2 },
-    { _id: 4, name: "vue", totalQuestions: 3 },
-    { _id: 5, name: "redux", totalQuestions: 10 },
+    { _id: "1", name: "javascript", totalQuestions: 5 },
+    { _id: "2", name: "react", totalQuestions: 8 },
+    { _id: "3", name: "next", totalQuestions: 2 },
+    { _id: "4", name: "vue", totalQuestions: 3 },
+    { _id: "5", name: "redux", totalQuestions: 10 },
   ]
 
   return (

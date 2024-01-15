@@ -1,6 +1,6 @@
 "use client"
 
-import { sidebarLinks } from '@/constants';
+import { sidebarLinks } from '../../constanst/index';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';

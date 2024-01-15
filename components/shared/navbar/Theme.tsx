@@ -12,7 +12,7 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar"
 import Image from 'next/image';
-import { themes } from '@/constants';
+import { themes } from '../../../constanst/index';
 
 const Theme = () => {
   const { mode, setMode } = useTheme();
