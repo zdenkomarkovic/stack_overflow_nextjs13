@@ -4,7 +4,7 @@ import { HomePageFilters } from '../../constanst/filters'
 import React, { useState } from 'react'
 import { Button } from '../ui/button'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { formUrlQuery } from '@/lib/utils'
+//import { formUrlQuery } from '@/lib/utils'
 
 const HomeFilters = () => {
   const searchParams = useSearchParams();
