@@ -4,65 +4,24 @@ import NoResult from "@/components/shared/NoResult";
 //import Pagination from "@/components/shared/Pagination";
 import LocalSearchbar from "@/components/shared/search/LocalSearchbar";
 import { Button } from "@/components/ui/button";
-//import { getQuestions, getRecommendedQuestions } from "@/lib/actions/question.action";
-//import { SearchParamsProps } from "@/types";
 import Link from "next/link";
 
 import type { Metadata } from 'next';
 import { auth } from "@clerk/nextjs";
 import { HomePageFilters } from "@/constanst/filters";
 import HomeFilters from "@/components/home/HomeFilters";
+import { getQuestions } from "@/lib/actions/question.action";
 
 export const metadata: Metadata = {
   title: 'Home | Dev Overflow',
 }
 
-const questions =[
-  {
-    _id: "1",
-    title: "Cascading deletes gfasdff gfdsfdsaf",
-    tags: [
-      { _id: "1", name: "python" },
-      { _id: "2", name: "sql" },
-    ],
-    author: {
-      _id: "author1",
-      name: "Tamo Neko",
-      picture: "url_to_picture",
-    },
-    upvotes: 10,
-    views: 100,
-    answers: [],
-    createdAt: new Date("2021-09-01T12:00:00.000Z"),
-  },
-  {
-    _id: "2",
-    title: "Another question",
-    tags: [
-      { _id: "3", name: "javascript" },
-      { _id: "4", name: "typescript" },
-    ],
-    author: {
-      _id: "author2",
-      name: "Somebody Else",
-      picture: "url_to_another_picture",
-    },
-    upvotes: 70000000,
-    views: 750000,
-    answers: [],
-    createdAt: new Date("2022-01-13T09:30:00.000Z"),
-  },
-  // Add more questions as needed
-];
-
-
-
-
-
-export default async function Home({ searchParams }: SearchParamsProps) {
+export default async function Home() {
   const { userId } = auth();
 
-  let result;
+  const result = await getQuestions({})
+  console.log(result.questions);
+  
 
   `if(searchParams?.filter === 'recommended') {
     if(userId) {
@@ -115,8 +74,8 @@ export default async function Home({ searchParams }: SearchParamsProps) {
   
 
       <div className="mt-10 flex w-full flex-col gap-6">
-      {questions.length > 0 ?
-          questions.map((question) => (
+      {result.questions.length > 0 ?
+          result.questions.map((question) => (
             <QuestionCard 
             key={question._id}
             _id={question._id}
