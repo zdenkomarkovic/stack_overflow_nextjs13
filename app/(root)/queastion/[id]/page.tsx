@@ -1,12 +1,14 @@
+import Answer from "@/components/forms/Answer";
 import Metric from "@/components/shared/Metric";
 import ParseHTML from "@/components/shared/ParseHTML";
+import RenderTag from "@/components/shared/RenderTag";
 import { getQuestionById } from "@/lib/actions/question.action";
 import { formatAndDivideNumber, getTimestamp } from "@/lib/utils";
 import Image from "@/node_modules/next/image";
 import Link from "@/node_modules/next/link";
 import React from "react";
 
-const page = async ({ params }) => {
+const page = async ({ params, searchParams }: any) => {
   const result = await getQuestionById({ questionId: params.id });
 
   return (
@@ -72,16 +74,16 @@ const page = async ({ params }) => {
 
       <ParseHTML data={result.content} />
 
-      {/* <div className="mt-8 flex flex-wrap gap-2">
+      <div className="mt-8 flex flex-wrap gap-2">
         {result.tags.map((tag: any) => (
-          <RenderTag 
+          <RenderTag
             key={tag._id}
             _id={tag._id}
             name={tag.name}
             showCount={false}
           />
         ))}
-      </div> */}
+      </div>
 
       {/* <AllAnswers 
         questionId={result._id}
@@ -91,11 +93,11 @@ const page = async ({ params }) => {
         filter={searchParams?.filter}
       /> */}
 
-      {/* <Answer 
-        question={result.content}
-        questionId={JSON.stringify(result._id)}
-        authorId={JSON.stringify(mongoUser._id)}
-      /> */}
+      <Answer
+      // question={result.content}
+      // questionId={JSON.stringify(result._id)}
+      // authorId={JSON.stringify(mongoUser._id)}
+      />
     </>
   );
 };
