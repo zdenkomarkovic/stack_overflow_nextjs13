@@ -1,6 +1,6 @@
 import React from "react";
 import Filter from "./Filter";
-import { AnswerFilters } from "../../constanst/filters";
+import { AnswerFilters } from "../../constants/filters";
 import { getAnswers } from "@/lib/actions/answer.action";
 import Link from "next/link";
 import Image from "next/image";

@@ -3,7 +3,7 @@ import QuestionCard from "@/components/cards/QuestionCard";
 import Filter from "@/components/shared/Filter";
 import NoResult from "@/components/shared/NoResult";
 import LocalSearchbar from "@/components/shared/search/LocalSearchbar";
-import { QuestionFilters } from "@/constanst/filters";
+import { QuestionFilters } from "@/constants/filters";
 
 import type { Metadata } from "next";
 import { auth } from "@clerk/nextjs";

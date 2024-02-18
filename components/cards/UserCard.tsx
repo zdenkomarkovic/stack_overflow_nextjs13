@@ -1,7 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
-import { Badge } from "../ui/badge";
 import RenderTag from "../shared/RenderTag";
+import Image from "@/node_modules/next/image";
+import Link from "@/node_modules/next/link";
+import { Badge } from "../ui/badge";
 import { getTopInteractedTags } from "@/lib/actions/tag.action";
 
 interface Props {
