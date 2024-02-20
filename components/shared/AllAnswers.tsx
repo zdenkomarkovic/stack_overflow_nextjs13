@@ -8,6 +8,7 @@ import { getTimestamp } from "@/lib/utils";
 import ParseHTML from "./ParseHTML";
 
 import Votes from "./Votes";
+import Pagination from "./Pagination";
 
 interface Props {
   questionId: string;
@@ -81,10 +82,10 @@ const AllAnswers = async ({
       </div>
 
       <div className="mt-10 w-full">
-        {/* <Pagination
+        <Pagination
           pageNumber={page ? +page : 1}
           isNext={result.isNextAnswer}
-        /> */}
+        />
       </div>
     </div>
   );

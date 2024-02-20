@@ -18,7 +18,7 @@ import Question from "@/database/question.model";
 import Tag from "@/database/tag.model";
 import Answer from "@/database/answer.model";
 import { BadgeCriteriaType } from "@/types";
-// import { assignBadges } from "../utils";
+import { assignBadges } from "../utils";
 
 export async function getUserById(params: any) {
   try {
@@ -177,7 +177,7 @@ export async function getSavedQuestions(params: GetSavedQuestionsParams) {
   try {
     connectToDatabase();
 
-    const { clerkId, searchQuery, filter, page = 1, pageSize = 20 } = params;
+    const { clerkId, searchQuery, filter, page = 1, pageSize = 10 } = params;
 
     const skipAmount = (page - 1) * pageSize;
 
@@ -311,13 +311,13 @@ export async function getUserInfo(params: GetUserByIdParams) {
       },
     ];
 
-    // const badgeCounts = assignBadges({ criteria });
+    const badgeCounts = assignBadges({ criteria });
 
     return {
       user,
       totalQuestions,
       totalAnswers,
-      // badgeCounts,
+      badgeCounts,
       reputation: user.reputation,
     };
   } catch (error) {
