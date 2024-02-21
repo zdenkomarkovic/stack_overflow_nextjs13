@@ -28,8 +28,6 @@ export async function globalSearch(params: SearchParams) {
     const typeLower = type?.toLowerCase();
 
     if (!typeLower || !SearchableTypes.includes(typeLower)) {
-      // SEARCH ACROSS EVERYTHING
-
       for (const { model, searchField, type } of modelsAndTypes) {
         const queryResults = await model
           .find({ [searchField]: regexQuery })
@@ -52,7 +50,6 @@ export async function globalSearch(params: SearchParams) {
         );
       }
     } else {
-      // SEARCH IN THE SPECIFIED MODEL TYPE
       const modelInfo = modelsAndTypes.find((item) => item.type === type);
 
       console.log({ modelInfo, type });
